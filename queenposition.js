@@ -6,27 +6,35 @@ var queen = {
         c: 4
     }
 }
-var input = prompt("Enter queen's direction and steps like N3 SW5....")
 
-function error() {
     
-}
+function EnterPosition() {
+    
+
+var input = prompt("Enter queen's direction and steps like\n E1 W1 S1 N3 SW5 SE1 NW1 NE1")
+console.log(input);
+
+
 if (input.length == 3) {
     var steps = Number(input.slice(2, ))
     var direction = input.slice(0, 2).toUpperCase();
-    // changeDirection(steps, direction)
+    changeDirection(steps, direction)
 
 } else if (input.length == 2) {
     var steps = Number(input.slice(1, ))
     var direction = input.slice(0, 1).toUpperCase()
-    // changeDirection(steps, direction)
+    changeDirection(steps, direction)
 } else {
 
   alert("Invalid input \n input length should be 2 or 3")
+  EnterPosition()
+  
     
 }
+}
 
-changeDirection(steps, direction)
+
+// changeDirection(steps, direction)
 
 
 function changeDirection(steps, direction) {
@@ -36,6 +44,7 @@ function changeDirection(steps, direction) {
             if (boundaryCheck(temp)) {
                 queen.position.r = temp;
                 console.log("Now queen's position is " + queen.position.r, queen.position.c);
+                EnterPosition()
             } else {
                 console.log("Crossing the boundary");
             }
@@ -45,6 +54,7 @@ function changeDirection(steps, direction) {
             if (boundaryCheck(temp)) {
                 queen.position.c = temp;
                 console.log("Now queen's position is " + queen.position.r, queen.position.c);
+                EnterPosition()
             } else {
                 console.log("Crossing the boundary");
             }
@@ -54,6 +64,7 @@ function changeDirection(steps, direction) {
             if (boundaryCheck(temp)) {
                 queen.position.c = temp;
                 console.log("Now queen's position is " + queen.position.r, queen.position.c);
+                EnterPosition()
             } else {
                 console.log("Crossing the boundary");
             }
@@ -63,8 +74,10 @@ function changeDirection(steps, direction) {
             if (boundaryCheck(temp)) {
                 queen.position.r = temp;
                 console.log("Now queen's position is " + queen.position.r, queen.position.c);
+                EnterPosition()
             } else {
                 console.log("Crossing the boundary");
+                EnterPosition()
             }
             break;
         case 'SE':
@@ -74,6 +87,7 @@ function changeDirection(steps, direction) {
                 queen.position.r = temp1;
                 queen.position.c = temp2;
                 console.log("Now queen's position is " + queen.position.r, queen.position.c);
+                EnterPosition()
             } else {
                 console.log("Crossing the boundary");
             }
@@ -85,6 +99,7 @@ function changeDirection(steps, direction) {
                 queen.position.r = temp1;
                 queen.position.c = temp2;
                 console.log("Now queen's position is " + queen.position.r, queen.position.c);
+                EnterPosition()
             } else {
                 console.log("Crossing the boundary");
             }
@@ -96,6 +111,7 @@ function changeDirection(steps, direction) {
                 queen.position.r = temp1;
                 queen.position.c = temp2;
                 console.log("Now queen's position is " + queen.position.r, queen.position.c);
+                EnterPosition()
             } else {
                 console.log("Crossing the boundary");
             }
@@ -107,11 +123,13 @@ function changeDirection(steps, direction) {
                 queen.position.r = temp1;
                 queen.position.c = temp2;
                 console.log("Now queen's position is " + queen.position.r, queen.position.c);
+                EnterPosition()
             } else {
                 console.log("Crossing the boundary");
             }
             break;
         default: alert(" Directions should be N3 or S1 or E2 or SW5....");
+            EnterPosition()
         break;
     }
 
@@ -130,6 +148,10 @@ function boundaryCheckrc(row_p, col_p) {
         return true;
     else
         return false;
+}
+function startGame()
+{
+    EnterPosition()
 }
 /*
 [
