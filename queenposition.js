@@ -90,6 +90,7 @@ function changeDirection(steps, direction) {
                 EnterPosition()
             } else {
                 console.log("Crossing the boundary");
+                EnterPosition()
             }
             break;
         case 'NE':
@@ -102,6 +103,7 @@ function changeDirection(steps, direction) {
                 EnterPosition()
             } else {
                 console.log("Crossing the boundary");
+                EnterPosition()
             }
             break;
         case 'SW':
@@ -114,6 +116,7 @@ function changeDirection(steps, direction) {
                 EnterPosition()
             } else {
                 console.log("Crossing the boundary");
+                EnterPosition()
             }
             break;
         case 'NW':
@@ -126,10 +129,11 @@ function changeDirection(steps, direction) {
                 EnterPosition()
             } else {
                 console.log("Crossing the boundary");
+                EnterPosition()
             }
             break;
-        default: alert(" Directions should be N3 or S1 or E2 or SW5....");
-            EnterPosition()
+        default: alert(" Invalid direction");
+             EnterPosition()
         break;
     }
 
